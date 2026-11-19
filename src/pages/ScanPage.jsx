@@ -209,7 +209,7 @@ export default function ScanPage() {
           className="detail-card-modern"
           style={{
             borderLeftColor: selected.color,
-            background: `linear-gradient(135deg, ${selected.color}0f, #ffffff 40%)`,
+            background: "#ffffff",
           }}
         >
           <div className="detail-top-banner">

@@ -4,16 +4,16 @@
    ========================================================================== */
 
 :root {
-  /* Core Brand Colors */
-  --ink-900: #0d1712;
-  --ink-800: #17241e;
-  --ink-700: #26382f;
-  --ink-soft: #475a50;
-  --ink-muted: #6b7f75;
+  /* Core Brand Colors - Deep rich contrast for maximum legibility */
+  --ink-900: #0a110d;
+  --ink-800: #121c17;
+  --ink-700: #1a2a22;
+  --ink-soft: #283a31;
+  --ink-muted: #485c52;
 
   --paper-bg: #f8f6f0;
   --paper-card: #ffffff;
-  --paper-elevated: #fffcf7;
+  --paper-elevated: #ffffff;
   --paper-muted: #f0ece1;
 
   --saffron-main: #d9651a;
@@ -80,17 +80,17 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink-800);
-  background-color: #f6f3eb;
+  background-color: #f7f5ef;
   background-image:
-    /* Vibrant ambient corridor radial glows */
-    radial-gradient(900px 500px at 0% -5%, rgba(249, 115, 22, 0.22) 0%, transparent 70%),
-    radial-gradient(900px 500px at 100% 5%, rgba(37, 99, 235, 0.2) 0%, transparent 70%),
-    radial-gradient(850px 500px at 100% 45%, rgba(22, 163, 74, 0.18) 0%, transparent 65%),
-    radial-gradient(850px 500px at 0% 55%, rgba(147, 51, 234, 0.18) 0%, transparent 65%),
-    radial-gradient(900px 600px at 50% 85%, rgba(13, 148, 136, 0.18) 0%, transparent 70%),
-    radial-gradient(750px 450px at 85% 95%, rgba(234, 179, 8, 0.18) 0%, transparent 65%),
+    /* Soft, pleasant ambient corridor radial glows (toned down for high readability) */
+    radial-gradient(900px 500px at 0% -5%, rgba(249, 115, 22, 0.08) 0%, transparent 70%),
+    radial-gradient(900px 500px at 100% 5%, rgba(37, 99, 235, 0.07) 0%, transparent 70%),
+    radial-gradient(850px 500px at 100% 45%, rgba(22, 163, 74, 0.06) 0%, transparent 65%),
+    radial-gradient(850px 500px at 0% 55%, rgba(147, 51, 234, 0.06) 0%, transparent 65%),
+    radial-gradient(900px 600px at 50% 85%, rgba(13, 148, 136, 0.06) 0%, transparent 70%),
+    radial-gradient(750px 450px at 85% 95%, rgba(234, 179, 8, 0.06) 0%, transparent 65%),
     /* Subtle spatial blueprint dots grid */
-    radial-gradient(rgba(23, 36, 30, 0.08) 1.2px, transparent 1.2px);
+    radial-gradient(rgba(23, 36, 30, 0.05) 1.1px, transparent 1.1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 26px 26px;
   background-attachment: fixed;
   overflow-x: hidden;
@@ -98,7 +98,7 @@ body {
 }
 
 /* ==========================================================================
-   Dynamic Ambient Blurred Glow Orbs
+   Dynamic Ambient Blurred Glow Orbs (Subtle, Non-intrusive)
    ========================================================================== */
 .ambient-orbs-container {
   position: fixed;
@@ -111,10 +111,10 @@ body {
 .ambient-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.42;
+  filter: blur(130px);
+  opacity: 0.14;
   will-change: transform;
-  animation: float-ambient 20s infinite alternate ease-in-out;
+  animation: float-ambient 24s infinite alternate ease-in-out;
 }
 
 .orb-saffron {
@@ -428,20 +428,9 @@ code {
   margin-bottom: 2rem;
   padding: 2.25rem 1.5rem;
   border-radius: var(--radius-lg);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 247, 237, 0.9) 30%,
-    rgba(239, 246, 255, 0.9) 65%,
-    rgba(240, 253, 244, 0.85) 100%
-  );
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow:
-    0 20px 50px -15px rgba(249, 115, 22, 0.16),
-    0 12px 35px -10px rgba(37, 99, 235, 0.16),
-    var(--shadow-sm);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
 
@@ -611,10 +600,8 @@ code {
 .stat-card {
   padding: 1.4rem 1.25rem;
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: #ffffff;
+  border: 1px solid var(--line);
   border-top: 4px solid var(--corridor-01);
   box-shadow: var(--shadow-xs);
   display: flex;
@@ -622,25 +609,10 @@ code {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.stat-card:nth-child(1) {
-  border-top-color: var(--corridor-01);
-  background: linear-gradient(150deg, #ffffff 60%, rgba(37, 99, 235, 0.08) 100%);
-}
-
-.stat-card:nth-child(2) {
-  border-top-color: var(--corridor-02);
-  background: linear-gradient(150deg, #ffffff 60%, rgba(249, 115, 22, 0.08) 100%);
-}
-
-.stat-card:nth-child(3) {
-  border-top-color: var(--corridor-03);
-  background: linear-gradient(150deg, #ffffff 60%, rgba(22, 163, 74, 0.08) 100%);
-}
-
-.stat-card:nth-child(4) {
-  border-top-color: var(--corridor-04);
-  background: linear-gradient(150deg, #ffffff 60%, rgba(147, 51, 234, 0.08) 100%);
-}
+.stat-card:nth-child(1) { border-top-color: var(--corridor-01); }
+.stat-card:nth-child(2) { border-top-color: var(--corridor-02); }
+.stat-card:nth-child(3) { border-top-color: var(--corridor-03); }
+.stat-card:nth-child(4) { border-top-color: var(--corridor-04); }
 
 .stat-card:hover {
   transform: translateY(-2px);
@@ -778,15 +750,13 @@ code {
   flex-direction: column;
   padding: 1.25rem;
   border-radius: var(--radius-lg);
-  background: linear-gradient(155deg, rgba(255, 255, 255, 0.96) 50%, var(--card-color-tint) 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: #ffffff;
+  border: 1px solid var(--line);
   text-decoration: none;
   color: inherit;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 18px rgba(13, 23, 18, 0.05);
+  box-shadow: var(--shadow-xs);
   transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
@@ -1109,11 +1079,9 @@ code {
   margin: 1.5rem 0;
   padding: 1.35rem;
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 10px 32px rgba(13, 23, 18, 0.06);
+  background: #ffffff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-xs);
   transition: box-shadow 0.2s ease;
 }
 

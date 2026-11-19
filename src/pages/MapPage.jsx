@@ -84,7 +84,7 @@ export default function MapPage() {
         className="map-inspector-card"
         style={{
           borderLeftColor: active.color,
-          background: `linear-gradient(135deg, ${active.color}0e, #ffffff 45%)`,
+          background: "#ffffff",
         }}
       >
         <div className="inspector-top-row">
