@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Bharat Corridor Intelligence is the digital companion to the printed map of India's economic corridors."
+    />
+    <meta name="theme-color" content="#14221c" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <title>Bharat Corridor Intelligence</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,680&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      window.addEventListener("error", function (e) {
+        var r = document.getElementById("root");
+        if (r && (!r.childNodes.length || r.querySelector(".initial-loader"))) {
+          r.innerHTML =
+            '<div style="font-family:sans-serif;padding:2rem;max-width:540px;margin:3rem auto;background:#fff;border-radius:1rem;border:1px solid #fee2e2;box-shadow:0 8px 24px rgba(0,0,0,0.06);">' +
+            '<h2 style="color:#dc2626;margin-top:0;">Failed to load application</h2>' +
+            '<p style="color:#475569;line-height:1.5;">' + (e.message || "Script loading failed.") + '</p>' +
+            '<p style="font-size:0.88rem;color:#64748b;line-height:1.5;">If opening directly from a folder, please start the development server in your terminal:<br><code style="background:#f1f5f9;padding:3px 8px;border-radius:4px;display:inline-block;margin-top:6px;font-weight:600;">npm run dev</code></p>' +
+            '</div>';
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="initial-loader" style="min-height: 100vh; display: grid; place-items: center; font-family: Outfit, sans-serif; color: #17241e; background: #f4f0e6;">
+        <div style="text-align: center;">
+          <h2 style="margin: 0 0 0.5rem; font-family: Fraunces, serif; font-size: 1.8rem;">BHARAT CORRIDOR INTELLIGENCE</h2>
+          <p style="margin: 0; color: #4c5c53; font-size: 0.95rem;">Loading national corridors...</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
