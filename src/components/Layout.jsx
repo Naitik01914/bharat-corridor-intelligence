@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 
+const CANVA_PPT_URL = "https://canva.link/giuhuoddz7hww6w";
+
 const navItems = [
   {
     to: "/",
@@ -35,22 +37,14 @@ const navItems = [
     ),
   },
   {
-    to: "/qr",
-    label: "QR Sticker",
+    href: CANVA_PPT_URL,
+    label: "Detailed PPT",
+    external: true,
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect width="5" height="5" x="3" y="3" rx="1"/>
-        <rect width="5" height="5" x="16" y="3" rx="1"/>
-        <rect width="5" height="5" x="3" y="16" rx="1"/>
-        <path d="M21 16h-3a2 2 0 0 0-2 2v3"/>
-        <path d="M21 21v.01"/>
-        <path d="M12 7v3a2 2 0 0 1-2 2H7"/>
-        <path d="M3 12h.01"/>
-        <path d="M12 3h.01"/>
-        <path d="M12 16v.01"/>
-        <path d="M16 12h1"/>
-        <path d="M21 12v.01"/>
-        <path d="M12 21v-1"/>
+        <path d="M2 3h20"/>
+        <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/>
+        <path d="m7 21 5-5 5 5"/>
       </svg>
     ),
   },
@@ -99,17 +93,36 @@ export default function Layout() {
 
           {/* Desktop Navigation */}
           <nav className="desktop-nav" aria-label="Primary Navigation">
-            {navItems.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                end={link.to === "/"}
-                className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
-              >
-                <span className="nav-icon">{link.icon}</span>
-                <span>{link.label}</span>
-              </NavLink>
-            ))}
+            {navItems.map((link) =>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="nav-link nav-link-presentation"
+                  title="Open Detailed Canva Presentation"
+                >
+                  <span className="nav-icon">{link.icon}</span>
+                  <span>{link.label}</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ opacity: 0.7 }}>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15 3 21 3 21 9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                </a>
+              ) : (
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  end={link.to === "/"}
+                  className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+                >
+                  <span className="nav-icon">{link.icon}</span>
+                  <span>{link.label}</span>
+                </NavLink>
+              )
+            )}
           </nav>
 
           {/* Mobile Menu Toggle Button */}
@@ -139,18 +152,32 @@ export default function Layout() {
         {mobileMenuOpen && (
           <div className="mobile-menu-drawer">
             <nav aria-label="Mobile Navigation">
-              {navItems.map((link) => (
-                <NavLink
-                  key={link.to}
-                  to={link.to}
-                  end={link.to === "/"}
-                  className={({ isActive }) => `mobile-nav-link ${isActive ? "active" : ""}`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="nav-icon">{link.icon}</span>
-                  <span>{link.label}</span>
-                </NavLink>
-              ))}
+              {navItems.map((link) =>
+                link.external ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mobile-nav-link"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span className="nav-icon">{link.icon}</span>
+                    <span>{link.label} ↗</span>
+                  </a>
+                ) : (
+                  <NavLink
+                    key={link.to}
+                    to={link.to}
+                    end={link.to === "/"}
+                    className={({ isActive }) => `mobile-nav-link ${isActive ? "active" : ""}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span className="nav-icon">{link.icon}</span>
+                    <span>{link.label}</span>
+                  </NavLink>
+                )
+              )}
             </nav>
           </div>
         )}
@@ -203,7 +230,16 @@ export default function Layout() {
               <li><Link to="/">Home Overview</Link></li>
               <li><Link to="/map">Interactive Map</Link></li>
               <li><Link to="/scan">Corridor Directory</Link></li>
-              <li><Link to="/qr">Physical Map QR Sticker</Link></li>
+              <li>
+                <a
+                  href={CANVA_PPT_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: "var(--saffron-main)", fontWeight: "600" }}
+                >
+                  Detailed Presentation (PPT) ↗
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -226,17 +262,30 @@ export default function Layout() {
 
       {/* Mobile Sticky Quick Navigation Bar */}
       <nav className="mobile-bottom-bar no-print" aria-label="Mobile Quick Nav">
-        {navItems.map((link) => (
-          <NavLink
-            key={link.to}
-            to={link.to}
-            end={link.to === "/"}
-            className={({ isActive }) => `mobile-bottom-item ${isActive ? "active" : ""}`}
-          >
-            <span className="mobile-bottom-icon">{link.icon}</span>
-            <span className="mobile-bottom-label">{link.label}</span>
-          </NavLink>
-        ))}
+        {navItems.map((link) =>
+          link.external ? (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              className="mobile-bottom-item"
+            >
+              <span className="mobile-bottom-icon">{link.icon}</span>
+              <span className="mobile-bottom-label">{link.label}</span>
+            </a>
+          ) : (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.to === "/"}
+              className={({ isActive }) => `mobile-bottom-item ${isActive ? "active" : ""}`}
+            >
+              <span className="mobile-bottom-icon">{link.icon}</span>
+              <span className="mobile-bottom-label">{link.label}</span>
+            </NavLink>
+          )
+        )}
       </nav>
     </div>
   );

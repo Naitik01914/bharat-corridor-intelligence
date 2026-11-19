@@ -14,6 +14,7 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="scan" element={<ScanPage />} />
           <Route path="map" element={<MapPage />} />
+          <Route path="presentation" element={<QrPage />} />
           <Route path="qr" element={<QrPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>

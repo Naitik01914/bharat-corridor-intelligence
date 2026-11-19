@@ -195,9 +195,14 @@ export default function MapPage() {
         <Link className="btn-modern btn-outline" to="/scan">
           <span>← Back to Corridor Guide</span>
         </Link>
-        <Link className="btn-modern btn-secondary" to="/qr">
-          <span>Get Physical Map QR Sticker →</span>
-        </Link>
+        <a
+          className="btn-modern btn-secondary"
+          href="https://canva.link/giuhuoddz7hww6w"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span>Open Detailed Presentation (PPT) ↗</span>
+        </a>
       </div>
     </article>
   );
