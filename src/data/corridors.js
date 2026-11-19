@@ -12,11 +12,11 @@ export const corridors = [
     span: "Delhi NCR to Jawaharlal Nehru Port, Mumbai",
     length: "About 1,500 km",
     summary:
-      "The flagship corridor of the National Industrial Corridor Development Programme, planned along the Western Dedicated Freight Corridor.",
+      "The flagship corridor of the National Industrial Corridor Development Programme (NICDP), planned along the Western Dedicated Freight Corridor (WDFC).",
     industry:
       "Manufacturing cities and investment regions for automobiles, electronics, engineering, and chemicals. Dholera in Gujarat is the best-known greenfield industrial city on this belt.",
     logistics:
-      "Western Dedicated Freight Corridor from Dadri toward JNPT, the Delhi–Mumbai highway spine (NH-48), and western ports including JNPT, Mundra, and Pipavav.",
+      "Western Dedicated Freight Corridor (WDFC) from Dadri toward JNPT, the Delhi–Mumbai highway spine (NH-48), and western ports including JNPT, Mundra, and Pipavav.",
     nodes: [
       "Dadri–Noida–Ghaziabad",
       "Manesar–Bawal",
@@ -25,7 +25,7 @@ export const corridors = [
       "Ahmedabad–Dholera",
       "Shendra–Bidkin",
     ],
-    states: ["Delhi", "Uttar Pradesh", "Haryana", "Rajasthan", "Madhya Pradesh", "Gujarat", "Maharashtra"],
+    states: ["Delhi (UT)", "Uttar Pradesh", "Haryana", "Rajasthan", "Madhya Pradesh", "Gujarat", "Maharashtra"],
   },
   {
     id: "akic",
@@ -225,12 +225,12 @@ export const corridors = [
     logistics:
       "North–South transit trunk corridors, Agra–Gwalior–Bhopal–Nagpur highway spine, and multi-directional rail junctions at Nagpur.",
     nodes: ["Delhi NCR", "Agra", "Gwalior", "Bhopal", "Nagpur"],
-    states: ["Delhi", "Uttar Pradesh", "Madhya Pradesh", "Maharashtra"],
+    states: ["Delhi (UT)", "Uttar Pradesh", "Madhya Pradesh", "Maharashtra"],
   },
 ];
 
 export const places = [
-  { state: "Delhi", cities: ["Delhi", "Dadri–NCR edge"], corridors: ["DMIC", "DNIC"] },
+  { state: "Delhi (UT)", cities: ["Delhi", "Dadri–NCR edge"], corridors: ["DMIC", "DNIC"] },
   { state: "Uttar Pradesh", cities: ["Noida", "Ghaziabad", "Dadri", "Khurja", "Kanpur", "Prayagraj", "Agra"], corridors: ["DMIC", "AKIC", "DNIC"] },
   { state: "Haryana", cities: ["Gurugram", "Manesar", "Bawal"], corridors: ["DMIC", "AKIC"] },
   { state: "Rajasthan", cities: ["Neemrana", "Bhiwadi", "Khushkhera", "Jodhpur"], corridors: ["DMIC"] },

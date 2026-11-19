@@ -149,7 +149,7 @@ export default function HomePage() {
                   aria-hidden="true"
                 />
                 <span className="card-state-count">
-                  {c.states.length} {c.states.length === 1 ? "state" : "states"}
+                  {c.states.length} states/UT
                 </span>
               </div>
 

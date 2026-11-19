@@ -174,7 +174,7 @@ export default function ScanPage() {
                 </div>
                 <div className="corridor-end-meta">
                   <span className="corridor-states-pill">
-                    {c.states.length} {c.states.length === 1 ? "state" : "states"}
+                    {c.states.length} states/UT
                   </span>
                   <span className="corridor-arrow-icon" aria-hidden="true">→</span>
                 </div>
@@ -272,7 +272,7 @@ export default function ScanPage() {
             </div>
 
             <div className="detail-metric-box">
-              <span className="metric-title">Connected States ({selected.states.length})</span>
+              <span className="metric-title">Connected States &amp; UT ({selected.states.length})</span>
               <div className="states-wrap">
                 {selected.states.map((st) => (
                   <span key={st} className="state-badge-tag">{st}</span>
